@@ -78,11 +78,30 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.15 }
+  { threshold: 0.3, rootMargin: '0px 0px -80px 0px' }
 );
 
 document.querySelectorAll('.scroll-reveal, .scroll-reveal-truck').forEach((el) => {
   revealObserver.observe(el);
+});
+
+/* ===================================================
+   SVC-REVEAL — services page scroll animation
+   =================================================== */
+const svcRevealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('svc-visible');
+        svcRevealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.3, rootMargin: '0px 0px -80px 0px' }
+);
+
+document.querySelectorAll('.svc-reveal').forEach((el) => {
+  svcRevealObserver.observe(el);
 });
 
 /* ===================================================
@@ -112,7 +131,7 @@ const counterObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.3 }
+  { threshold: 0.5, rootMargin: '0px 0px -60px 0px' }
 );
 
 const statsBar = document.querySelector('.contact-stats-grid');
