@@ -131,14 +131,14 @@ img {
 }
 
 .navbar-logo img {
-  height: 55px;
+  height: 78px;
   width: auto;
   object-fit: contain;
   transition: height var(--transition);
 }
 
 .navbar.scrolled .navbar-logo img {
-  height: 45px;
+  height: 60px;
 }
 
 .navbar-nav {
@@ -785,11 +785,11 @@ img {
   }
 
   .navbar-logo img {
-    height: 44px;
+    height: 60px;
   }
 
   .navbar.scrolled .navbar-logo img {
-    height: 38px;
+    height: 50px;
   }
 
   .hero {
